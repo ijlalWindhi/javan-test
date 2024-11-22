@@ -208,8 +208,6 @@ The project maintains high code quality standards through:
 - ESLint configuration
 - Prettier formatting
 - TypeScript strict mode
-- Husky pre-commit hooks
-- Jest unit testing
 
 ## 📝 License
 
@@ -217,7 +215,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## 👥 Authors
 
-- **Ijlal Windhi** - _Initial work_ - [YourGithub](https://github.com/ijlalWindhi)
+- **Ijlal Windhi** - _Initial work_ - [ijlalWindhi](https://github.com/ijlalWindhi)
 
 ## 💡 Best Practices
 
@@ -235,4 +233,4 @@ This project follows several React and TypeScript best practices:
 
 ---
 
-Made with ❤️ by [Ijlal Dhisa](https://github.com/ijlalWindhi)
+Made with ❤️ by [Ijlal Dhisa](https://ijlaldhisa.my.id)
