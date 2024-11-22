@@ -17,6 +17,7 @@ const Cart: React.FC = () => {
     handleUpdateQuantity,
     handleUpdateNote,
     handleApplyVoucher,
+    handleCheckout,
   } = useCart();
 
   if (items.length === 0) {
@@ -43,6 +44,7 @@ const Cart: React.FC = () => {
             shipping={shipping}
             discount={discount}
             finalTotal={finalTotal}
+            onCheckout={handleCheckout}
           />
 
           <VoucherSection

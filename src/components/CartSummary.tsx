@@ -5,6 +5,7 @@ interface CartSummaryProps {
   shipping: number;
   discount: number;
   finalTotal: number;
+  onCheckout: () => void;
 }
 
 export const CartSummary: React.FC<CartSummaryProps> = ({
@@ -12,6 +13,7 @@ export const CartSummary: React.FC<CartSummaryProps> = ({
   shipping,
   discount,
   finalTotal,
+  onCheckout,
 }) => (
   <div className="bg-white shadow-md p-4 border rounded-md h-fit">
     <h2 className="text-base md:text-lg font-semibold">The total amount of</h2>
@@ -42,7 +44,10 @@ export const CartSummary: React.FC<CartSummaryProps> = ({
       </div>
     </div>
 
-    <button className="text-xs sm:text-sm md:text-base w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 rounded mt-4 transition">
+    <button
+      className="text-xs sm:text-sm md:text-base w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white py-2 rounded mt-4 transition"
+      onClick={onCheckout}
+    >
       Go to Checkout
     </button>
   </div>

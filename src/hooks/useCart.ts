@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { useMemo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
@@ -6,6 +7,7 @@ import {
     updateQuantity,
     updateNote,
     applyVoucher,
+    clearCart,
 } from '../store/cartSlice';
 
 export const useCart = () => {
@@ -35,6 +37,29 @@ export const useCart = () => {
         dispatch(applyVoucher(code));
     }, [dispatch]);
 
+    const handleCheckout = useCallback(async () => {
+        try {
+            // Clear the cart
+            dispatch(clearCart());
+
+            // Show success message
+            Swal.fire({
+                title: 'Thank you for your purchase!',
+                text: 'Your order has been placed successfully.',
+                icon: 'success',
+                confirmButtonText: 'OK',
+            });
+        } catch (error) {
+            console.error('Checkout failed:', error);
+            Swal.fire({
+                title: 'Oops!',
+                text: 'Something went wrong. Please try again later.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+            });
+        }
+    }, [dispatch]);
+
     return {
         items,
         totalAmount,
@@ -46,5 +71,6 @@ export const useCart = () => {
         handleUpdateQuantity,
         handleUpdateNote,
         handleApplyVoucher,
+        handleCheckout
     };
 };
